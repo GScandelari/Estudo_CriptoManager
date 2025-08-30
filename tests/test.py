@@ -1,12 +1,12 @@
 import os
 import shutil
-from cripto_manager import generate_key, load_key, InvalidKeyError
-from sender import encrypt_message
-from receiver import decrypt_message
+from src.cripto_manager import generate_key, load_key, InvalidKeyError
+from src.sender import encrypt_message
+from src.receiver import decrypt_message
 
 def run_tests():
     print("\n=== TESTE 1: Chave válida, mensagem válida ===")
-    if not os.path.exists("key.key"):
+    if not os.path.exists("../key.key"):
         generate_key()
     key = load_key()
     msg = "Teste mensagem secreta"
@@ -22,10 +22,10 @@ def run_tests():
 
     print("\n=== TESTE 3: Chave corrompida ===")
     # Backup da chave válida
-    shutil.copy("key.key", "key_backup.key")
+    shutil.copy("../key.key", "key_backup.key")
 
     # Corrompe a chave
-    with open("key.key", "wb") as f:
+    with open("../key.key", "wb") as f:
         f.write(b"chave_invalida")
 
     try:
@@ -35,7 +35,7 @@ def run_tests():
         print(f"Erro detectado: {e}")
 
     # Restaura chave válida
-    shutil.move("key_backup.key", "key.key")
+    shutil.move("key_backup.key", "../key.key")
 
     print("\n=== TESTE 4: Chave válida mas mensagem não correspondente ===")
     # Cria nova chave (não vai bater com a mensagem anterior)
