@@ -1,9 +1,9 @@
 import os
 import shutil
 import unittest
-from cripto_manager import generate_key, load_key, InvalidKeyError
-from sender import encrypt_message
-from receiver import decrypt_message
+from src.cripto_manager import generate_key, load_key, InvalidKeyError
+from src.sender import encrypt_message
+from src.receiver import decrypt_message
 
 class TestCryptoSystem(unittest.TestCase):
 

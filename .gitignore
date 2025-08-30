@@ -1,4 +1,4 @@
-# Arquivos Python cache
+# Python
 __pycache__/
 *.pyc
 *.pyo
@@ -9,10 +9,12 @@ __pycache__/
 env/
 venv/
 
-# Banco de dados / configs locais
-*.db
-*.sqlite3
-.env
-
-# Chave secreta do projeto
+# Chave secreta
 key.key
+
+# PyCharm
+.idea/
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
