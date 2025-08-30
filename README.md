@@ -32,7 +32,7 @@ Contribuições são bem-vindas! Sinta-se livre para abrir issues ou enviar pull
 
 ## Licença
 
-Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.txt) para mais detalhes.
 
 ## Autor
 
