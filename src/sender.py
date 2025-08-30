@@ -1,12 +1,11 @@
-from cryptography.fernet import Fernet
 from src.cripto_manager import load_key
+from cryptography.fernet import Fernet
 
-def encrypt_message(message: str) -> bytes:
-    """Criptografa a mensagem usando a chave salva"""
-    key = load_key()
+def encrypt_message(message: str, key_path="key.key") -> bytes:
+    key = load_key(key_path)
     fernet = Fernet(key)
-    encrypted = fernet.encrypt(message.encode())
-    return encrypted
+    return fernet.encrypt(message.encode())
+
 
 if __name__ == "__main__":
     msg = input("Digite a mensagem para enviar: ")

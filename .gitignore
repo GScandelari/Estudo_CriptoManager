@@ -1,4 +1,4 @@
-# Python
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
@@ -11,6 +11,7 @@ venv/
 
 # Chave secreta
 key.key
+key_backup.key
 
 # PyCharm
 .idea/
@@ -18,3 +19,7 @@ key.key
 # Arquivos de sistema
 .DS_Store
 Thumbs.db
+
+# Logs e temporários
+*.log
+*.tmp

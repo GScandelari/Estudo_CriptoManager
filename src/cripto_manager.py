@@ -2,31 +2,26 @@ from cryptography.fernet import Fernet, InvalidToken
 import os
 
 class InvalidKeyError(Exception):
-    """Erro customizado para chave inválida"""
     pass
 
-def generate_key():
-    """Gera uma nova chave e salva em key.key"""
+def generate_key(path="key.key"):
+    """Gera uma nova chave e salva no caminho especificado"""
     key = Fernet.generate_key()
-    with open("key.key", "wb") as key_file:
+    with open(path, "wb") as key_file:
         key_file.write(key)
-    print("Chave gerada e salva em key.key")
+    print(f"Chave gerada e salva em {path}")
 
-def load_key():
-    """Carrega a chave salva em key.key e valida se é uma chave Fernet"""
-    if not os.path.exists("key.key"):
-        raise FileNotFoundError("Arquivo key.key não encontrado. Gere uma chave com cripto_manager.py")
+def load_key(path="key.key"):
+    """Carrega a chave e valida se é Fernet"""
+    if not os.path.exists(path):
+        raise FileNotFoundError(f"Arquivo {path} não encontrado. Gere uma chave primeiro.")
 
-    with open("key.key", "rb") as key_file:
+    with open(path, "rb") as key_file:
         key = key_file.read()
 
-    # Valida se a chave realmente é uma chave Fernet
     try:
-        Fernet(key)  # se for inválida, estoura ValueError
+        Fernet(key)
     except Exception:
-        raise InvalidKeyError("A chave em key.key não é válida")
+        raise InvalidKeyError("A chave não é válida.")
 
     return key
-
-if __name__ == "__main__":
-    generate_key()
