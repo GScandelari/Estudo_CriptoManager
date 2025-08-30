@@ -1,5 +1,5 @@
 from cryptography.fernet import Fernet
-from cripto_manager import load_key
+from src.cripto_manager import load_key
 
 def encrypt_message(message: str) -> bytes:
     """Criptografa a mensagem usando a chave salva"""

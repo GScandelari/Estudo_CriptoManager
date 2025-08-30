@@ -1,5 +1,5 @@
 from cryptography.fernet import Fernet, InvalidToken
-from cripto_manager import load_key, InvalidKeyError
+from src.cripto_manager import load_key, InvalidKeyError
 
 def decrypt_message(encrypted_message: bytes) -> str:
     """Descriptografa a mensagem com tratamento de chave inválida"""
