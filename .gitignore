@@ -1,0 +1,18 @@
+# Arquivos Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ambientes virtuais
+.venv/
+env/
+venv/
+
+# Banco de dados / configs locais
+*.db
+*.sqlite3
+.env
+
+# Chave secreta do projeto
+key.key
